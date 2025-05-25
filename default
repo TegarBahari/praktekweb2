@@ -20,14 +20,14 @@ server {
     }
 
     # Disable .git directory
-    location ~* \.git {
+    location ~ /\.git {
         deny all;
         access_log off;
         log_not_found off;
     }
 
     # Add locations of phpmyadmin here.
-    location ~ ^/\.php(/|$) {
+    location ~ [^/]\.php(/|$) {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass 127.0.0.1:9000;
         include fastcgi_params;
