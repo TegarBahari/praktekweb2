@@ -85,5 +85,5 @@ jobs:
         with:
           app-name: 'prakweb2'
           slot-name: 'Production'
-          package: .
+          package: ./public
           
