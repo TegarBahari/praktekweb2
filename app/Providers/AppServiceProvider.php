@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (enc('APP_ENV') == 'production' ){
+        if (env('APP_ENV') == 'production' ){
             URL::forceScheme('https');
         }
         Gate::define("view-student", function (User $user) {
